@@ -13,6 +13,7 @@ must include `jquery` file and `ajax-loading.js`
      imgPath : '/path/to/loading/gif'
   });
 </script>
+```
 
 # More
 
