@@ -16,9 +16,7 @@
         var selector = '#' + opts.id;
 
         $(document).ajaxStart(function(){
-            if (isOpenAjaxLoader) {
-                $(selector).show();
-            }
+            $(selector).show();
         });
 
         $(document).ajaxComplete(function(){
