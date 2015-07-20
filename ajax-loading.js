@@ -15,19 +15,16 @@
 
         var selector = '#' + opts.id;
 
-        $(document).ajaxStart(function(){
+        $(document).on('ajaxStart', function(){
             $(selector).show();
         });
 
-        $(document).ajaxComplete(function(){
+        $(document).on('ajaxComplete', function(){
             setTimeout(function(){
                 $(selector).hide();
             }, opts.minTime);
         });
 
-        $(document).ajaxSuccess();
-
-        $(document).ajaxError();
     };
 
     $.loading.default = {
@@ -39,7 +36,7 @@
         radius     : '4px',
 
         //loading img/gif
-        imgPath    : '/assets/img/img.gif',
+        imgPath    : './img/ajax-loading.gif',
 
         //loading text
         tip        : 'loading...',
@@ -51,8 +48,8 @@
         //wrap div style
         var wrapCss = 'display: none;position: fixed;top: 0;bottom: 0;left: 0;right: 0;margin: auto;padding: 8px;text-align: center;vertical-align: middle;';
         var cssArray = [
-            'width: 80px',
-            'height: 80px',
+            'width: 75px',
+            'height: 75px',
             'z-index:' + opts.zIndex,
             'background:' + opts.background,
             'border-radius:' + opts.radius
@@ -60,15 +57,15 @@
         wrapCss += cssArray.join(';');
 
         //img style
-        var imgCss = 'margin-bottom:5px;';
+        var imgCss = 'margin-bottom:8px;';
         cssArray = [
-            'width:40',
-            'height:40px'
+            'width:45px',
+            'height:45px'
         ];
         imgCss += cssArray.join(';');
 
         //text style
-        var textCss = ';';
+        var textCss = 'margin:0;';
         cssArray = [
             'font-size:' + opts.fontSize,
             'color:'     + opts.fontColor
@@ -82,4 +79,4 @@
         $(document).find('body').append(html);
     }
 
-})(jQuery||Zepto);
+})(window.jQuery||window.Zepto);

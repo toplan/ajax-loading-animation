@@ -1,12 +1,11 @@
 # ajax-loading-animation
-a simple ajax loading animation for jquery
+a simple ajax loading animation for jquery or Zepto
 
 # Simple Usage
 
-must include `jquery` file and `ajax-loading.js`
+must include `jQuery` or `Zepto` file and `ajax-loading.js`
 
 ```html
-<script src="/path/to/jquery"></script>
 <script src="/path/to/ajax-loading.js"></script>
 <script type="text/javascript">
   $.loading({
