@@ -3,6 +3,7 @@
  */
 
 (function($){
+    var config = {};
 
     $.loading = function (options) {
 
@@ -11,6 +12,7 @@
             options
         );
 
+        config = opts;
         init(opts);
 
         var selector = '#' + opts.id;
@@ -25,6 +27,21 @@
             }, opts.minTime);
         });
 
+    };
+
+    $.loading.open = function (time) {
+        var selector = '#' + config.id;
+        $(selector).show();
+        if (time) {
+            setTimeout(function(){
+                $(selector).hide();
+            }, parseInt(time));
+        }
+    };
+
+    $.loading.close = function () {
+        var selector = '#' + config.id;
+        $(selector).hide();
     };
 
     $.loading.default = {

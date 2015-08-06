@@ -1,5 +1,5 @@
 # ajax-loading-animation
-a simple ajax loading animation for jquery or Zepto
+a simple ajax loading animation for jquery and Zepto
 
 # Simple Usage
 
@@ -8,16 +8,27 @@ must include `jQuery` or `Zepto` file and `ajax-loading.js`
 ```html
 <script src="/path/to/ajax-loading.js"></script>
 <script type="text/javascript">
+  //automatic monitoring ajax events
   $.loading({
      imgPath : '/path/to/loading/gif'
   });
+
+  //manual show the loading view
+  $.loading.open();//not close
+  $.loading.open(1000);//auto close view after 1 seconds
+
+  //manual close the loading view
+  $.loading.close();
+
 </script>
 ```
+**tip:**please used `loading()` method to init view before use `open()` or `close()` method.
 
 # More
 
 ```html
 <script type="text/javascript">
+   //init
    $.loading({
         //wrap div
         //set the loading html wrap tag id
