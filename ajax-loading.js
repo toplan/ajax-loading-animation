@@ -29,6 +29,7 @@
             }, opts.minTime);
         });
 
+        return $.loading;
     };
 
     $.loading.open = function (time) {
@@ -58,9 +59,13 @@
         background : 'rgba(0, 0, 0, 0.7)',
         minTime    : 200,
         radius     : '4px',
+        width      : '85px',
+        height     : '85px',
 
         //loading img/gif
-        imgPath    : './img/ajax-loading.gif',
+        imgPath    : 'http://7xjke9.com1.z0.glb.clouddn.com/ajax-loading.gif',
+        imgWidth   : '45px',
+        imgHeight  : '45px',
 
         //loading text
         tip        : 'loading...',
@@ -72,8 +77,8 @@
         //wrap div style
         var wrapCss = 'display: none;position: fixed;top: 0;bottom: 0;left: 0;right: 0;margin: auto;padding: 8px;text-align: center;vertical-align: middle;';
         var cssArray = [
-            'width: 85px',
-            'height: 85px',
+            'width:' + opts.width,
+            'height:' + opts.height,
             'z-index:' + opts.zIndex,
             'background:' + opts.background,
             'border-radius:' + opts.radius
@@ -83,8 +88,8 @@
         //img style
         var imgCss = 'margin-bottom:8px;';
         cssArray = [
-            'width:45px',
-            'height:45px'
+            'width:' + opts.imgWidth,
+            'height:' + opts.imgWidth
         ];
         imgCss += cssArray.join(';');
 
