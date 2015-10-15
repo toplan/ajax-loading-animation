@@ -18,7 +18,9 @@
         var selector = '#' + opts.id;
 
         $(document).on('ajaxStart', function(){
-            $(selector).show();
+            if (config.ajax) {
+                $(selector).show();
+            }
         });
 
         $(document).on('ajaxComplete', function(){
@@ -44,7 +46,12 @@
         $(selector).hide();
     };
 
+    $.loading.ajax = function (isListen) {
+        config.ajax = isListen;
+    };
+
     $.loading.default = {
+        ajax       : true,
         //wrap div
         id         : 'ajaxLoading',
         zIndex     : '1000',
@@ -65,8 +72,8 @@
         //wrap div style
         var wrapCss = 'display: none;position: fixed;top: 0;bottom: 0;left: 0;right: 0;margin: auto;padding: 8px;text-align: center;vertical-align: middle;';
         var cssArray = [
-            'width: 75px',
-            'height: 75px',
+            'width: 85px',
+            'height: 85px',
             'z-index:' + opts.zIndex,
             'background:' + opts.background,
             'border-radius:' + opts.radius

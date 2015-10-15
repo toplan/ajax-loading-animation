@@ -8,10 +8,13 @@ must include `jQuery` or `Zepto` file and `ajax-loading.js`
 ```html
 <script src="/path/to/ajax-loading.js"></script>
 <script type="text/javascript">
-  //automatic monitoring ajax events
+  //init: automatic monitoring ajax events
   $.loading({
      imgPath : '/path/to/loading/gif'
   });
+  //enable and disable listening ajax events
+  $.loading.ajax(true);//enable
+  $.loading.ajax(false);//disable
 
   //manual show the loading view
   $.loading.open();//not close
